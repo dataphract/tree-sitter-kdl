@@ -1,0 +1,111 @@
+===
+Decimal (integer, unsigned)
+===
+
+ident 123
+
+---
+
+(source_file
+  (node
+    (identifier (bare_identifier))
+    (value
+      (number
+        (decimal
+          (integer))))))
+
+===
+Decimal (integer, signed)
+===
+
+ident -123
+
+---
+
+(source_file
+  (node
+    (identifier (bare_identifier))
+    (value
+      (number
+        (decimal
+          (sign)
+          (integer))))))
+
+===
+Decimal (real, unsigned)
+===
+
+ident 3.14159
+
+---
+
+(source_file
+  (node
+    (identifier (bare_identifier))
+    (value
+      (number
+        (decimal
+          (integer)
+          (fractional
+            (integer)))))))
+
+===
+Decimal (real, signed)
+===
+
+ident +3.14159
+
+---
+
+(source_file
+  (node
+    (identifier (bare_identifier))
+    (value
+      (number
+        (decimal
+          (sign)
+          (integer)
+          (fractional
+            (integer)))))))
+
+===
+Decimal (real, unsigned, with unsigned exponent)
+===
+
+ident 6.02e23
+
+---
+
+(source_file
+  (node
+    (identifier (bare_identifier))
+    (value
+      (number
+        (decimal
+          (integer)
+          (fractional
+            (integer))
+          (exponent
+            (integer)))))))
+
+===
+Decimal (real, signed, with signed exponent)
+===
+
+ident +6.02e+23
+
+---
+
+(source_file
+  (node
+    (identifier (bare_identifier))
+    (value
+      (number
+        (decimal
+          (sign)
+          (integer)
+          (fractional
+            (integer))
+          (exponent
+            (sign)
+            (integer)))))))

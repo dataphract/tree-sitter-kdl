@@ -1,0 +1,80 @@
+===
+Identifier only (bare)
+===
+
+ident
+
+---
+
+(source_file
+  (node
+    (identifier
+      (bare_identifier))))
+
+===
+Identifier only (quoted)
+===
+
+"ident\n"
+
+---
+
+(source_file
+  (node
+    (identifier
+      (string
+        (escaped_string
+          (escape_sequence
+            (escape_code)))))))
+
+===
+With single argument
+===
+
+ident 3.14
+
+---
+
+(source_file
+  (node
+    (identifier
+      (bare_identifier))
+    (value
+      (number
+        (decimal
+          (integer)
+          (fractional (integer)))))))
+
+===
+With single property
+===
+
+ident pi=3.14
+
+---
+
+(source_file
+  (node
+    (identifier
+      (bare_identifier))
+    (prop
+      (identifier (bare_identifier))
+      (value
+        (number
+          (decimal
+            (integer)
+            (fractional (integer))))))))
+
+===
+With empty children
+===
+
+ident {}
+
+---
+
+(source_file
+  (node
+    (identifier
+      (bare_identifier))
+    (node_children)))

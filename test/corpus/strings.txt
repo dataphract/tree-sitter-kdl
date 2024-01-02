@@ -1,0 +1,131 @@
+===
+Escaped string (empty)
+===
+
+""
+
+---
+
+(source_file
+  (node
+    (identifier
+      (string
+        (escaped_string)))))
+
+===
+Escaped string (regular text)
+===
+
+"hello"
+
+---
+
+(source_file
+  (node
+    (identifier
+      (string
+        (escaped_string)))))
+
+===
+Escaped string (escape sequences)
+===
+
+"\n\u{1234}"
+
+---
+
+(source_file
+  (node
+    (identifier
+      (string
+        (escaped_string
+          (escape_sequence
+            (escape_code))
+          (escape_sequence
+            (escape_code
+              (unicode_escape))))))))
+
+===
+Raw string (empty, one hash)
+===
+
+r#""#
+
+---
+
+(source_file
+  (node
+    (identifier
+      (string
+        (raw_string)))))
+
+===
+Raw string (empty, many hashes)
+===
+
+r####""####
+
+---
+
+(source_file
+  (node
+    (identifier
+      (string
+        (raw_string)))))
+
+===
+Raw string (quote in contents)
+===
+
+r#"""#
+
+---
+
+(source_file
+  (node
+    (identifier
+      (string
+        (raw_string)))))
+
+===
+Raw string (hash in contents)
+===
+
+r#"#"#
+
+---
+
+(source_file
+  (node
+    (identifier
+      (string
+        (raw_string)))))
+
+===
+Raw string (newline in contents)
+===
+
+r#"
+"#
+
+---
+
+(source_file
+  (node
+    (identifier
+      (string
+        (raw_string)))))
+
+===
+Raw string (partial closing quote in contents)
+===
+
+r###""##"###
+
+---
+
+(source_file
+  (node
+    (identifier
+      (string
+        (raw_string)))))

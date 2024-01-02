@@ -1,0 +1,51 @@
+===
+ASCII
+===
+
+hello
+
+---
+
+(source_file
+  (node
+    (identifier
+      (bare_identifier))))
+
+===
+Non-ASCII
+===
+
+你好
+
+---
+
+(source_file
+  (node
+    (identifier
+      (bare_identifier))))
+
+===
+Sign only
+===
+
++
+
+---
+
+(source_file
+  (node
+    (identifier
+      (bare_identifier))))
+
+===
+Leading sign
+===
+
++hello
+
+---
+
+(source_file
+  (node
+    (identifier
+      (bare_identifier))))

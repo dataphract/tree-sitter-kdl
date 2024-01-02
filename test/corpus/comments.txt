@@ -1,0 +1,76 @@
+===
+Single-line comment (single)
+===
+
+// This is a single-line comment.
+
+---
+
+(source_file
+  (single_line_comment))
+
+===
+Single-line comment (multiple)
+===
+
+// This is a single-line comment.
+// This is another single-line comment.
+
+// This is a single-line comment after an empty line.
+
+---
+
+(source_file
+  (single_line_comment)
+  (single_line_comment)
+  (single_line_comment))
+
+===
+Multi-line comment (one line)
+===
+
+/* This is a multi-line * comment / on one line. */
+
+---
+
+(source_file
+  (multi_line_comment))
+
+===
+Multi-line comment (multiple lines)
+===
+
+/* This is a / multi-line
+ * comment across * multiple
+ / lines.
+ */
+
+---
+
+(source_file
+  (multi_line_comment))
+
+===
+Multi-line comment (nested)
+===
+
+/* This is a
+ * /* nested */
+ * multi-line comment.
+ */
+
+---
+(source_file
+  (multi_line_comment))
+
+===
+Multi-line comment (two on one line)
+===
+
+/* This is one comment */ /* and this is another. */
+
+---
+
+(source_file
+  (multi_line_comment)
+  (multi_line_comment))
