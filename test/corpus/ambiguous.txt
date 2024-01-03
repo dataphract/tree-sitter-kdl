@@ -1,0 +1,28 @@
+===
+Bare identifier or decimal
+===
+
++ 3.14 -=+3.14
+
+---
+
+(source_file
+  (node
+    (identifier (bare_identifier))
+    (value (number (decimal)))
+    (prop
+      (identifier (bare_identifier))
+      (value (number (decimal))))))
+
+===
+Bare identifier or raw string
+===
+
+r### r###" r###" "###
+
+---
+
+(source_file
+  (node
+    (identifier (bare_identifier))
+    (value (string (raw_string)))))
