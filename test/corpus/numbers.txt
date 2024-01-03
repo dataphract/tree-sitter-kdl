@@ -9,9 +9,7 @@ ident 123
 (source_file
   (node
     (identifier (bare_identifier))
-    (value
-      (number
-        (decimal)))))
+    (value (number (decimal)))))
 
 ===
 Decimal (integer, signed)
@@ -24,9 +22,7 @@ ident -123
 (source_file
   (node
     (identifier (bare_identifier))
-    (value
-      (number
-        (decimal)))))
+    (value (number (decimal)))))
 
 ===
 Decimal (real, unsigned)
@@ -39,9 +35,7 @@ ident 3.14159
 (source_file
   (node
     (identifier (bare_identifier))
-    (value
-      (number
-        (decimal)))))
+    (value (number (decimal)))))
 
 ===
 Decimal (real, signed)
@@ -54,9 +48,7 @@ ident +3.14159
 (source_file
   (node
     (identifier (bare_identifier))
-    (value
-      (number
-        (decimal)))))
+    (value (number (decimal)))))
 
 ===
 Decimal (real, unsigned, with unsigned exponent)
@@ -69,9 +61,7 @@ ident 6.02e23
 (source_file
   (node
     (identifier (bare_identifier))
-    (value
-      (number
-        (decimal)))))
+    (value (number (decimal)))))
 
 ===
 Decimal (real, signed, with signed exponent)
@@ -84,6 +74,82 @@ ident +6.02e+23
 (source_file
   (node
     (identifier (bare_identifier))
-    (value
-      (number
-        (decimal)))))
+    (value (number (decimal)))))
+
+===
+Hexadecimal (unsigned)
+===
+
+ident 0xdeadBEEF
+
+---
+
+(source_file
+  (node
+    (identifier (bare_identifier))
+    (value (number (hexadecimal)))))
+
+===
+Hexadecimal (signed)
+===
+
+ident -0xBADf00d
+
+---
+
+(source_file
+  (node
+    (identifier (bare_identifier))
+    (value (number (hexadecimal)))))
+
+===
+Octal (unsigned)
+===
+
+ident 0o01234567
+
+---
+
+(source_file
+  (node
+    (identifier (bare_identifier))
+    (value (number (octal)))))
+
+===
+Octal (signed)
+===
+
+ident -0o76543210
+
+---
+
+(source_file
+  (node
+    (identifier (bare_identifier))
+    (value (number (octal)))))
+
+===
+Binary (unsigned)
+===
+
+ident 0b11110010
+
+---
+
+(source_file
+  (node
+    (identifier (bare_identifier))
+    (value (number (binary)))))
+
+===
+Binary (signed)
+===
+
+ident -0b10010110
+
+---
+
+(source_file
+  (node
+    (identifier (bare_identifier))
+    (value (number (binary)))))

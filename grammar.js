@@ -83,7 +83,29 @@ module.exports = grammar({
 
     // Numerics and booleans =======================================================================
 
-    number: $ => choice($.decimal),
+    number: $ => choice(
+      $.decimal,
+      $.hexadecimal,
+      $.octal,
+      $.binary,
+    ),
+
+    _sign: $ => /[+-]/,
+    hexadecimal: $ => seq(
+      optional($._sign),
+      "0x",
+      repeat1(/[0-9A-Fa-f]/),
+    ),
+    octal: $ => seq(
+      optional($._sign),
+      "0o",
+      repeat1(/[0-7]/),
+    ),
+    binary: $ => seq(
+      optional($._sign),
+      "0b",
+      repeat1(/[01]/),
+    ),
 
     boolean: $ => choice("true", "false"),
 

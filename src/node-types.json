@@ -1,5 +1,10 @@
 [
   {
+    "type": "binary",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "boolean",
     "named": true,
     "fields": {}
@@ -69,6 +74,11 @@
         ]
       }
     }
+  },
+  {
+    "type": "hexadecimal",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "identifier",
@@ -228,11 +238,28 @@
       "required": true,
       "types": [
         {
+          "type": "binary",
+          "named": true
+        },
+        {
           "type": "decimal",
+          "named": true
+        },
+        {
+          "type": "hexadecimal",
+          "named": true
+        },
+        {
+          "type": "octal",
           "named": true
         }
       ]
     }
+  },
+  {
+    "type": "octal",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "prop",
@@ -361,6 +388,18 @@
   },
   {
     "type": "//",
+    "named": false
+  },
+  {
+    "type": "0b",
+    "named": false
+  },
+  {
+    "type": "0o",
+    "named": false
+  },
+  {
+    "type": "0x",
     "named": false
   },
   {
