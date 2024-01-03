@@ -1,6 +1,8 @@
 module.exports = grammar({
   name: "kdl",
   externals: $ => [
+    $.bare_identifier,
+    $.decimal,
     $.multi_line_comment,
     $.raw_string,
   ],
@@ -47,13 +49,6 @@ module.exports = grammar({
     ),
 
     identifier: $ => choice($.keyword, $.string, $.bare_identifier),
-    bare_identifier: $ => choice(
-      /[^\s\\\/(){}<>;\[\]=,"0-9+-][^\s\\\/(){}<>;\[\]=,"]*/,
-      // TODO: this may require the custom scanner -- need to match "+" as an identifier without
-      // messing up numbers.
-      //
-      // * /[+-]([^\s\\\/(){}<>;\[\]=,"0-9][^\s\\\/(){}<>;\[\]=,"]*)?/,
-    ),
     keyword: $ => choice($.boolean, "null"),
     prop: $ => seq($.identifier, "=", $.value),
     value: $ => seq(
@@ -89,18 +84,6 @@ module.exports = grammar({
     // Numerics and booleans =======================================================================
 
     number: $ => choice($.decimal),
-
-    decimal: $ => seq(
-      optional($.sign),
-      $.integer,
-      optional($.fractional),
-      optional($.exponent),
-    ),
-    fractional: $ => seq(".", $.integer),
-    exponent: $ => seq(/[Ee]/, optional($.sign), $.integer),
-    integer: $ => seq($._digit, repeat(choice($._digit, "_"))),
-    _digit: $ => /[0-9]/,
-    sign: $ => /[+-]/,
 
     boolean: $ => choice("true", "false"),
 

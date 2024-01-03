@@ -11,8 +11,7 @@ ident 123
     (identifier (bare_identifier))
     (value
       (number
-        (decimal
-          (integer))))))
+        (decimal)))))
 
 ===
 Decimal (integer, signed)
@@ -27,9 +26,7 @@ ident -123
     (identifier (bare_identifier))
     (value
       (number
-        (decimal
-          (sign)
-          (integer))))))
+        (decimal)))))
 
 ===
 Decimal (real, unsigned)
@@ -44,10 +41,7 @@ ident 3.14159
     (identifier (bare_identifier))
     (value
       (number
-        (decimal
-          (integer)
-          (fractional
-            (integer)))))))
+        (decimal)))))
 
 ===
 Decimal (real, signed)
@@ -62,11 +56,7 @@ ident +3.14159
     (identifier (bare_identifier))
     (value
       (number
-        (decimal
-          (sign)
-          (integer)
-          (fractional
-            (integer)))))))
+        (decimal)))))
 
 ===
 Decimal (real, unsigned, with unsigned exponent)
@@ -81,12 +71,7 @@ ident 6.02e23
     (identifier (bare_identifier))
     (value
       (number
-        (decimal
-          (integer)
-          (fractional
-            (integer))
-          (exponent
-            (integer)))))))
+        (decimal)))))
 
 ===
 Decimal (real, signed, with signed exponent)
@@ -101,11 +86,4 @@ ident +6.02e+23
     (identifier (bare_identifier))
     (value
       (number
-        (decimal
-          (sign)
-          (integer)
-          (fractional
-            (integer))
-          (exponent
-            (sign)
-            (integer)))))))
+        (decimal)))))

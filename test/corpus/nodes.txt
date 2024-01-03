@@ -41,9 +41,7 @@ ident 3.14
       (bare_identifier))
     (value
       (number
-        (decimal
-          (integer)
-          (fractional (integer)))))))
+        (decimal)))))
 
 ===
 With single property
@@ -61,9 +59,7 @@ ident pi=3.14
       (identifier (bare_identifier))
       (value
         (number
-          (decimal
-            (integer)
-            (fractional (integer))))))))
+          (decimal))))))
 
 ===
 With empty children
